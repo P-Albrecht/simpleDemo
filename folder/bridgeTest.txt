@@ -1,0 +1,6 @@
+import { C3 } from '../refFile.txt';
+
+function F5 ( ) { 
+    let ccc ;
+    let ddd ;
+}
