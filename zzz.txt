@@ -1,0 +1,16 @@
+class C1 (a , b , c ) {
+
+    let hhh ;
+    let zzz ;
+
+    function F1 ( V1 ) { 
+        let xxx = zzz;
+        let yyy;
+    }
+
+    function F2 ( V2 ) { 
+        let zzz = bbb;
+        let yyy = hhh;
+    }
+    
+}
