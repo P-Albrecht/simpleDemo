@@ -3,11 +3,13 @@ import F2 from 'dddddd'
 
 let aaa ;
 let bbb ;
+let ccc ;
 
 
 class C1 (aaa , bbb , ccc) {
 
     let xxx ;
+    let ccc ;
 
     function F1 ( bbb ) { 
         let xxx ;
