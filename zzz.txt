@@ -1,14 +1,25 @@
 import F1 from 'dddddd'
 import F2 from 'dddddd'
 
-class C1 ( ) {
+let aaa ;
+let bbb ;
 
-    function F1 ( ) { 
 
+class C1 (aaa , bbb , ccc) {
+
+    let xxx ;
+
+    function F1 ( bbb ) { 
+        let xxx ;
+        let bbb ;
     }
 
-    function F2 ( ) { 
-
+    function F2 ( ccc ) { 
+        let xxx ;
+        let bbb ;
+        let ccc ;
     }
     
 }
+
+let ccc ;
