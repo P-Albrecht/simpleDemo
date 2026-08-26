@@ -6,7 +6,7 @@ let bbb ;
 let ccc ;
 
 
-class C1 (aaa , bbb , ccc) {
+class C1 (aaa , bbb , ccc) : ccc {
 
     let xxx ;
     let ccc ;
