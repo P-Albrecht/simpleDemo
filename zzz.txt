@@ -1,3 +1,6 @@
+import F1 from 'dddddd'
+import F2 from 'dddddd'
+
 class C1 ( ) {
 
     function F1 ( ) { 
