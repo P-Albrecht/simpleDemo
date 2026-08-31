@@ -23,7 +23,7 @@ class C1 (a , b , c ) {
 }
 
 F5();
-C1();
+C3();
 
 C1.F1(aaa);
 C1.F2(ccc);
