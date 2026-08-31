@@ -1,14 +1,11 @@
 import { C2 } from './bridgeTest2.txt';
+import { F5 } from './folder/bridgeTest.txt';
 
 let aaa ;
 let bbb ;
 let ccc ;
 
 class C1 (a , b , c ) {
-
-    import { F5 } from './folder/bridgeTest.txt';
-
-
     let hhh ;
     let zzz ;
 
@@ -22,15 +19,10 @@ class C1 (a , b , c ) {
     function F2 ( V2 ) { 
         let zzz = bbb;
         let yyy = hhh;
-    }
-
-    F5();
-
-    
+    }  
 }
 
 F5();
-
 C1.F1(aaa);
 C1.F2(ccc);
 C2.F3();
