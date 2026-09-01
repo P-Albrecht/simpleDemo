@@ -1,5 +1,6 @@
 import F1 from 'dddddd'
 import F2 from 'dddddd'
+import { C2 } from './bridgeTest2.txt';
 
 let aaa ;
 let bbb ;
