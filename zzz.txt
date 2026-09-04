@@ -21,6 +21,10 @@ class C1 (aaa , bbb , ccc) : ccc {
         let xxx ;
         let bbb ;
         let ccc ;
+
+        function FF2 ( ) { 
+            let xxx ;
+        }
     }
     
 }
