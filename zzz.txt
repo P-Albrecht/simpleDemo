@@ -1,32 +1,22 @@
-import F1 from 'dddddd'
-import F2 from 'dddddd'
 import { C2 } from './bridgeTest2.txt';
 
-let aaa ;
-let bbb ;
-let ccc ;
 
+class C1 () {
 
-class C1 (aaa , bbb , ccc) : ccc {
-
-    let xxx = ccc ;
-    let ccc ;
-
-    function F1 ( bbb ) { 
-        let xxx  = ccc ;
-        let bbb ;
+    function F1 () { 
     }
 
-    function F2 ( ccc ) { 
-        let xxx ;
-        let bbb ;
-        let ccc ;
+    function F2 () { 
 
-        function FF2 ( ) { 
-            let xxx ;
+        function FF2 () { 
         }
+
     }
     
 }
 
-let ccc ;
+C1.F1(aaa);
+C1.F2(ccc);
+C1.F2.FF2();
+C2.F3();
+C2.F4();
