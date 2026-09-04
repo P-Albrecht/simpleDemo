@@ -13,21 +13,11 @@ class C1 (a , b , c ) {
     function F1 ( V1 ) { 
         let xxx = zzz;
         let yyy;
-
-        F5();
     }
 
-    function F2 ( V2 ) { 
-        let zzz = bbb;
-        let yyy = hhh;
-    }  
 }
-
-F5();
-C3();
 
 C1.F1(aaa);
 C1.F2(ccc);
-C1.F2.FF2();
 C2.F3();
 C2.F4();
