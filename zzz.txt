@@ -1,15 +1,12 @@
 import { C2 } from './bridgeTest2.txt';
 
 
-class C1 () {
+class C1.F2 () {
 
     function F1 () { 
     }
 
-    function F2 () { 
-
-        function FF2 () { 
-        }
+    function FF2 () { 
 
     }
     
