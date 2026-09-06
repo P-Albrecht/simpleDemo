@@ -1,4 +1,5 @@
 import { C2 } from './bridgeTest2.txt';
+import { C1 } from './testFile.txt';
 
 
 class C1.F2 () {
