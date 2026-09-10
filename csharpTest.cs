@@ -1,43 +1,49 @@
-using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Mvc.Testing;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.eShopWeb.Infrastructure.Data;
-using Microsoft.eShopWeb.Infrastructure.Identity;
-using Microsoft.eShopWeb.PublicApi.AuthEndpoints;
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Hosting;
+using System;
+using System.Collections.Generic;
+using System.IdentityModel.Tokens.Jwt;
+using System.Security.Claims;
+using System.Text;
+using Microsoft.eShopWeb.ApplicationCore.Constants;
+using Microsoft.IdentityModel.Tokens;
  
-namespace Microsoft.eShopWeb.FunctionalTests.PublicApi;
+namespace Microsoft.eShopWeb.FunctionalTests.Web.Api;
  
-public class TestApiApplication : WebApplicationFactory<AuthenticateEndpoint>
+public class ApiTokenHelper
 {
-    private readonly string _environment = "Testing";
- 
-    protected override IHost CreateHost(IHostBuilder builder)
+    public static string GetAdminUserToken()
     {
-        builder.UseEnvironment(_environment);
+        string userName = "admin@microsoft.com";
+        string[] roles = { "Administrators" };
  
-        // Add mock/test services to the builder here
-        builder.ConfigureServices(services =>
+        return CreateToken(userName, roles);
+    }
+ 
+    public static string GetNormalUserToken()
+    {
+        string userName = "demouser@microsoft.com";
+        string[] roles = { };
+ 
+        return CreateToken(userName, roles);
+    }
+ 
+    private static string CreateToken(string userName, string[] roles)
+    {
+        var claims = new List<Claim> { new Claim(ClaimTypes.Name, userName) };
+ 
+        foreach (var role in roles)
         {
-            services.AddScoped(sp =>
-            {
-                // Replace SQLite with in-memory database for tests
-                return new DbContextOptionsBuilder<CatalogContext>()
-                .UseInMemoryDatabase("DbForPublicApi")
-                .UseApplicationServiceProvider(sp)
-                .Options;
-            });
-            services.AddScoped(sp =>
-            {
-                // Replace SQLite with in-memory database for tests
-                return new DbContextOptionsBuilder<AppIdentityDbContext>()
-                .UseInMemoryDatabase("IdentityDbForPublicApi")
-                .UseApplicationServiceProvider(sp)
-                .Options;
-            });
-        });
+            claims.Add(new Claim(ClaimTypes.Role, role));
+        }
  
-        return base.CreateHost(builder);
+        var key = Encoding.ASCII.GetBytes(AuthorizationConstants.JWT_SECRET_KEY);
+        var tokenDescriptor = new SecurityTokenDescriptor
+        {
+            Subject = new ClaimsIdentity(claims.ToArray()),
+            Expires = DateTime.UtcNow.AddHours(1),
+            SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature)
+        };
+        var tokenHandler = new JwtSecurityTokenHandler();
+        var token = tokenHandler.CreateToken(tokenDescriptor);
+        return tokenHandler.WriteToken(token);
     }
 }
