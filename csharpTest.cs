@@ -1,1 +1,1 @@
-return key.Length ### ;
+return joined.Length == 0 ? "Anon" : joined;
