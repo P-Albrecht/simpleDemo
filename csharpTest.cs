@@ -27,25 +27,7 @@ public sealed class CitationKeyScheme
     /// <summary>Render the base (pre-collision) key for a document.</summary>
     public string BaseKey(CslDocument doc)
     {
-        var sb = new StringBuilder();
-        int i = 0;
-        while (i < Template.Length)
-        {
-            if (Template[i] == '[')
-            {
-                int end = Template.IndexOf(']', i);
-                if (end < 0) { sb.Append(Template[i..]); break; }
-                var token = Template[(i + 1)..end].ToLowerInvariant();
-                sb.Append(Expand(token, doc));
-                i = end + 1;
-            }
-            else
-            {
-                sb.Append(Template[i]);
-                i++;
-            }
-        }
-        var key = sb.ToString();
+        ey = sb.ToString();
         // Keep keys LaTeX-safe.
         key = new string(key.Where(c => char.IsLetterOrDigit(c) || c is '-' or '_' or ':' or '.').ToArray());
         return key.Length == 0 ? "ref" : key;
