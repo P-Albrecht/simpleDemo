@@ -1,1 +1,1 @@
-return joined.Length == 0 ? "Anon" : joined;
+return joined.Length = ### ;
