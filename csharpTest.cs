@@ -1,1 +1,1 @@
-return joined.Length = ### ;
+AAA aaa = ### ;
