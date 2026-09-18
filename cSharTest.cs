@@ -1,17 +1,3 @@
-using System.Threading;
-using System.Threading.Tasks;
-using Ardalis.ApiEndpoints;
-using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.eShopWeb.ApplicationCore.Interfaces;
-using Microsoft.eShopWeb.Infrastructure.Identity;
-using Swashbuckle.AspNetCore.Annotations;
- 
-namespace Microsoft.eShopWeb.PublicApi.AuthEndpoints;
- 
-/// <summary>
-/// Authenticates a user
-/// </summary>
 public class AuthenticateEndpoint : EndpointBaseAsync
     .WithRequest<AuthenticateRequest>
     .WithActionResult<AuthenticateResponse>
@@ -37,23 +23,6 @@ public class AuthenticateEndpoint : EndpointBaseAsync
         CancellationToken cancellationToken = default)
     {
         var response = new AuthenticateResponse(request.CorrelationId());
- 
-        // This doesn't count login failures towards account lockout
-        // To enable password failures to trigger account lockout, set lockoutOnFailure: true
-        //var result = await _signInManager.PasswordSignInAsync(Input.Email, Input.Password, Input.RememberMe, lockoutOnFailure: true);
-        var result = await _signInManager.PasswordSignInAsync(request.Username, request.Password, false, true);
- 
-        response.Result = result.Succeeded;
-        response.IsLockedOut = result.IsLockedOut;
-        response.IsNotAllowed = result.IsNotAllowed;
-        response.RequiresTwoFactor = result.RequiresTwoFactor;
-        response.Username = request.Username;
- 
-        if (result.Succeeded)
-        {
-            response.Token = await _tokenClaimsService.GetTokenAsync(request.Username);
-        }
- 
         return response;
     }
 }
