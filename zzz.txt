@@ -1,5 +1,6 @@
 import { C2 } from './bridgeTest2.txt';
 import { C1 } from './testFile.txt';
+import { C3 } from '.folder/reactRefTest.txt';
 
 
 class C1 () {
@@ -21,3 +22,4 @@ C1.F2();
 C1.F3();
 C2.F3();
 C2.F2();
+C3.F6();
