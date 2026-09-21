@@ -1,6 +1,6 @@
 import { C2 } from './bridgeTest2.txt';
 import { C1 } from './testFile.txt';
-import { C3 } from './folder/reactRefTest.txt';
+import { C3 } from '@common/reactRefTest.txt';
 
 
 class C1 () {
