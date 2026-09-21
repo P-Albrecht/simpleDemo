@@ -1,1 +1,6 @@
-
+class C3 () {
+    function F6 ( eee, aaa, bbb ) { 
+        //let xxx = ddd;
+        //let yyy = eee;
+    }
+}
