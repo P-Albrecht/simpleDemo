@@ -4,6 +4,8 @@ let aaa ;
 let bbb ;
 let ccc ;
 
+aaaaaaaaaaaaaaaaa
+
 class C1 (a , b , c ) {
     let hhh ;
     let zzz ;
