@@ -4,24 +4,27 @@ let aaa ;
 let bbb ;
 let ccc ;
 
+uuuu
+
 class C1 (a , b , c ) {
     let hhh ;
     let zzz ;
-
+uuuuu
     function F1 ( fff ) { 
         let xxx = zzz;
         let xxx = fff;
         let yyy;
     }
-
+uuuu
     function F2 ( ) { 
         let aaa = bbb;
         let aaa = ccc;
     }
 
-}
+iii}iii
 
 C1.F1(aaa);
 C1.F2(ccc);
+iii
 C2.F3();
 C2.F4();
