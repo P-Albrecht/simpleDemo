@@ -3,7 +3,7 @@ import { C2 } from './bridgeTest2.txt';
 let aaa ;
 let bbb ;
 let ccc ;
-
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 class C1 (a , b , c ) {
     let hhh ;
     let zzz ;
@@ -18,7 +18,7 @@ class C1 (a , b , c ) {
         let aaa = bbb;
         let aaa = ccc;
     }
-
+        ############################################
 }
 
 C1.F1(aaa);
