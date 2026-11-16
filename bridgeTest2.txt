@@ -5,6 +5,7 @@ class C2 () {
     function F3 ( Q3 ) { 
         let ccc ;
         let ddd ;
+ZZZZZZZZZZZZZZZZZZZZZZZZZZZ
     }
 
     function F4 ( eee, aaa, bbb ) { 
@@ -12,3 +13,4 @@ class C2 () {
         let yyy = eee;
     }
 }
+:::::::::::::::::::::::::::::
